@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext } from "react";
 import companies from '../data/companies.json';
 import users from '../data/users.json';
 
