@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { companyContext } from '../../context/company';
 import { BrandIcon } from '../brandIcon';
 import { AvatarImage, Wrapper } from './styles';
 
 export const Header = () => {
+    const context = useContext(companyContext);
+
     return (
         <Wrapper>
             <main>
@@ -17,7 +20,7 @@ export const Header = () => {
                     <AvatarImage>
                         <h2>TA</h2>
                     </AvatarImage>
-                    <h2>iSorensen Tecnologia</h2>
+                    <h2>{context.companyName}</h2>
                 </aside>
             </main>
         </Wrapper>
