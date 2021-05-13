@@ -16,7 +16,6 @@ export const Solicitations = () => {
                 columns={colums}
                 dataSource={companyUsers}
                 rowSelection={{...rowSelection}}
-                size="large"
             />
         </Wrapper>
     );

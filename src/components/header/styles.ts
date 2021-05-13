@@ -11,32 +11,32 @@ export const Wrapper = styled.header`
         align-items: center;
         max-width: 1440px;
         margin: 0 auto;
-    }
 
-    & > main > nav {
-        display: flex;
-        align-items: center;
-        padding-right: 41px;
-        flex: 1;
-        justify-content: flex-end;
+        & > nav {
+            display: flex;
+            align-items: center;
+            padding-right: 41px;
+            flex: 1;
+            justify-content: flex-end;
 
-        & > h2 {
-            cursor: pointer;
+            & > h2 {
+                cursor: pointer;
+            }
+        }
+
+        & > aside {
+            display: flex;
+            align-items: center;
+
+            & > h2 {
+                font-weight: normal;
+            }
+
         }
     }
-
 
     & > main > nav > h2 + h2 {
         margin-left: 44px;
-    }
-
-    & > main > aside {
-        display: flex;
-        align-items: center;
-
-        & > h2 {
-            font-weight: normal;
-        }
     }
 `;
 
