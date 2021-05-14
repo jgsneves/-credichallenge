@@ -21,6 +21,7 @@ export const NoDataToRender = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 200px;
 
     & > h2 {
         font-family: Montserrat;
@@ -74,6 +75,21 @@ export const FinalStage = styled.div`
         & > ol {
             height: 200px;
             overflow-y: scroll;
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #888;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
         }
 
         & > ol > li {
