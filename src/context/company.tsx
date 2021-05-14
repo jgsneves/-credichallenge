@@ -10,13 +10,14 @@ export const CompanyProvider: React.FC = ({children}) => {
 
     const [company, setCompany] = React.useState<CompanyData>({
         companyName: currentCompany[0].fantasyName,
-        companyUsers: userList
+        companyUsers: userList,
+        approvedLoans: [],
+        reprovedLoans: [],
     });
 
     return (
         <companyContext.Provider value={{
-            companyName: company.companyName,
-            companyUsers: company.companyUsers,
+            companyData: company,
             setCompany
         }}>
             {children}

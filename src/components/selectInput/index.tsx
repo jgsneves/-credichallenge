@@ -5,12 +5,12 @@ interface InputProps extends React.HTMLProps<HTMLSelectElement> {
     options: string[];
 }
 
-export const SelectInput = ({options, id}: InputProps) => {
+export const SelectInput = ({options, id, onChange}: InputProps) => {
     return (
-        <Select id={id}>
+        <Select id={id} onChange={onChange} defaultValue="">
             <option value="">Escolha uma ação...</option>
             {options.map(item => (
-                <option value={item}>{item}</option>
+                <option value={item} key={item}>{item}</option>
             ))}
         </Select>
     );

@@ -35,3 +35,46 @@ export const rowSelection = {
       console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
     }
 };
+
+export const setKeyAttribute = (arr: User[]) => {
+    const parsedArray = arr.map(item => {
+        const userBody = {...item, key: item.id};
+        return userBody;
+    });
+    return parsedArray;
+}
+
+export const sortArray = (arr: UserWithKey[]): UserWithKey[] => {
+    const sortedArray = arr.sort(function (a, b) {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+    });
+    return sortedArray;
+}
+
+
+
+export const handleSolicitation = ({companyData, selectedUsersKeys, setCompany, solicitationResponse}: HandleSolicitationArgs ) => {
+    if (solicitationResponse === "Aprovar") {
+        const newUsersArray = companyData.companyUsers.filter(item => !selectedUsersKeys.includes(item.id));
+        const approvedUsersArray = companyData.companyUsers.filter(item => selectedUsersKeys.includes(item.id));
+        setCompany({
+            ...companyData,
+            companyUsers: newUsersArray,
+            approvedLoans: approvedUsersArray
+        });
+    } else if (solicitationResponse === "Rejeitar") {
+        const newUsersArray = companyData.companyUsers.filter(item => !selectedUsersKeys.includes(item.id));
+        const rejectedUsersArray = companyData.companyUsers.filter(item => selectedUsersKeys.includes(item.id));
+        setCompany({
+            ...companyData,
+            companyUsers: newUsersArray,
+            reprovedLoans: rejectedUsersArray,
+        });
+    }
+}

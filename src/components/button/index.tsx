@@ -6,9 +6,9 @@ interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
     children: React.ReactNode
 }
 
-export const Button = ({children, theme}: ButtonProps) => {
+export const Button = ({children, theme, onClick}: ButtonProps) => {
     return (
-        <ButtonWrapper theme={theme}>
+        <ButtonWrapper theme={theme} onClick={onClick}>
             {children}
         </ButtonWrapper>
     );

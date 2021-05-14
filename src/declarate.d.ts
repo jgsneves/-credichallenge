@@ -16,13 +16,25 @@ interface User {
     value: string;
 }
 
-interface CompanyContext {
-    companyName: string;
-    companyUsers: User[];
-    setCompany: React.Dispatch<React.SetStateAction<CompanyData>>;
+interface UserWithKey extends User {
+    key: string;
 }
 
 interface CompanyData {
     companyName: string;
     companyUsers: User[];
+    approvedLoans: User[];
+    reprovedLoans: USer[];
+}
+
+interface CompanyContext {
+    companyData: CompanyData;
+    setCompany: React.Dispatch<React.SetStateAction<CompanyData>>;
+}
+
+interface HandleSolicitationArgs {
+    solicitationResponse: string;
+    companyData: CompanyData;
+    setCompany: React.Dispatch<React.SetStateAction<CompanyData>>;
+    selectedUsersKeys: string[];
 }

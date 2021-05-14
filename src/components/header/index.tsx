@@ -4,7 +4,7 @@ import { BrandIcon } from '../brandIcon';
 import { AvatarImage, Wrapper } from './styles';
 
 export const Header = () => {
-    const context = useContext(companyContext);
+    const {companyData} = useContext(companyContext);
 
     return (
         <Wrapper>
@@ -20,7 +20,7 @@ export const Header = () => {
                     <AvatarImage>
                         <h2>TA</h2>
                     </AvatarImage>
-                    <h2>{context.companyName}</h2>
+                    <h2>{companyData.companyName}</h2>
                 </aside>
             </main>
         </Wrapper>
