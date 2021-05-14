@@ -13,6 +13,7 @@ export default createGlobalStyle`
     body, h1, h2, h3, p, button {
         font-family: Montserrat;
         font-style: normal;
+        margin: 0;
     }
 
     h1 {

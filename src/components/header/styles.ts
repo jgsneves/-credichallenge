@@ -15,12 +15,13 @@ export const Wrapper = styled.header`
         & > nav {
             display: flex;
             align-items: center;
+            height: inherit;
             padding-right: 41px;
             flex: 1;
             justify-content: flex-end;
 
-            & > h2 {
-                cursor: pointer;
+            & > h2 + h2 {
+                margin-left: 44px;
             }
         }
 
@@ -31,13 +32,35 @@ export const Wrapper = styled.header`
             & > h2 {
                 font-weight: normal;
             }
-
         }
+
+    }
+
+    /* & > main > aside {
+        display: flex;
+        align-items: center;
+
+        & > h2 {
+            font-weight: normal;
+        }
+
+    } */
+
+    /* & > main > nav {
+            display: flex;
+            align-items: center;
+            padding-right: 41px;
+            flex: 1;
+            justify-content: flex-end;
+
+            & > h2 {
+                cursor: pointer;
+            }
     }
 
     & > main > nav > h2 + h2 {
         margin-left: 44px;
-    }
+    } */
 `;
 
 export const AvatarImage = styled.div`
