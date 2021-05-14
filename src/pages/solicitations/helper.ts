@@ -57,8 +57,6 @@ export const sortArray = (arr: UserWithKey[]): UserWithKey[] => {
     return sortedArray;
 }
 
-
-
 export const handleSolicitation = ({companyData, selectedUsersKeys, setCompany, solicitationResponse, setFinalStage, setSolicitationResponse}: HandleSolicitationArgs ) => {
     if (solicitationResponse === "Aprovar") {
         const newUsersArray = companyData.companyUsers.filter(item => !selectedUsersKeys.includes(item.id));

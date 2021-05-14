@@ -46,12 +46,10 @@ export const Solicitations = () => {
                         />
                         <Button
                             theme={solicitationResponse === '' ? 'secondary' : 'primary'}
-                            onClick={() => setFinalStage(!finalStage)}
+                            onClick={() => solicitationResponse === '' ? null : setFinalStage(!finalStage)}
                         >
                             {solicitationResponse === '' ? 'Nenhuma ação selecionada' : 'Confirmar'}
                         </Button>
-
-                        {/* <Button theme="primary" onClick={() => console.log("company", companyData)}>Teste</Button> */}
                     </footer>
                 </>
             ) : (
