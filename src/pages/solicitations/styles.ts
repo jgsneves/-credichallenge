@@ -44,3 +44,50 @@ export const NoDataToRender = styled.section`
         }
     }
 `;
+
+export const FinalStage = styled.div`
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    & > main {
+        height: 400px;
+        padding: 24px;
+        width: 526px;
+        border-radius: 8px;
+        background-color: #FFFFFF;
+        margin: auto;
+
+        & > h3 {
+            padding-bottom: 16px;
+            font-size: 16px;
+        }
+
+        & > p {
+            font-size: 13px;
+        }
+
+        & > ol {
+            height: 200px;
+            overflow-y: scroll;
+        }
+
+        & > ol > li {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            & > p {
+                font-size: 13px;
+            }
+        }
+
+        & > button + button {
+            margin-left: 16px;
+        }
+    }
+`;

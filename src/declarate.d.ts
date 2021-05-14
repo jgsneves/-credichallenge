@@ -35,6 +35,8 @@ interface CompanyContext {
 interface HandleSolicitationArgs {
     solicitationResponse: string;
     companyData: CompanyData;
-    setCompany: React.Dispatch<React.SetStateAction<CompanyData>>;
     selectedUsersKeys: string[];
+    setCompany: React.Dispatch<React.SetStateAction<CompanyData>>;
+    setFinalStage: React.Dispatch<React.SetStateAction<boolean>>;
+    setSolicitationResponse: React.Dispatch<React.SetStateAction<string>>;
 }

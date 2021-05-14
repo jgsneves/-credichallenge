@@ -59,7 +59,7 @@ export const sortArray = (arr: UserWithKey[]): UserWithKey[] => {
 
 
 
-export const handleSolicitation = ({companyData, selectedUsersKeys, setCompany, solicitationResponse}: HandleSolicitationArgs ) => {
+export const handleSolicitation = ({companyData, selectedUsersKeys, setCompany, solicitationResponse, setFinalStage, setSolicitationResponse}: HandleSolicitationArgs ) => {
     if (solicitationResponse === "Aprovar") {
         const newUsersArray = companyData.companyUsers.filter(item => !selectedUsersKeys.includes(item.id));
         const approvedUsersArray = companyData.companyUsers.filter(item => selectedUsersKeys.includes(item.id));
@@ -68,6 +68,8 @@ export const handleSolicitation = ({companyData, selectedUsersKeys, setCompany, 
             companyUsers: newUsersArray,
             approvedLoans: approvedUsersArray
         });
+        setFinalStage(false);
+        setSolicitationResponse("");
     } else if (solicitationResponse === "Rejeitar") {
         const newUsersArray = companyData.companyUsers.filter(item => !selectedUsersKeys.includes(item.id));
         const rejectedUsersArray = companyData.companyUsers.filter(item => selectedUsersKeys.includes(item.id));
@@ -76,5 +78,7 @@ export const handleSolicitation = ({companyData, selectedUsersKeys, setCompany, 
             companyUsers: newUsersArray,
             reprovedLoans: rejectedUsersArray,
         });
+        setFinalStage(false);
+        setSolicitationResponse("");
     }
 }
