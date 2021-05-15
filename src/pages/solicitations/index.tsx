@@ -1,15 +1,15 @@
 import React from 'react';
-import {Table} from 'antd';
+import { Table } from 'antd';
 import { FinalStage, NoDataToRender, Wrapper } from './styles';
-import 'antd/dist/antd.css';
 import { companyContext } from '../../context/company';
-import {colums, handleSolicitation, setKeyAttribute, sortArray} from './helper';
+import { colums, handleSolicitation, setKeyAttribute, sortArray } from './helper';
 import { SelectInput } from '../../components/selectInput';
 import { Button } from '../../components/button';
-import {formatCPF} from '@brazilian-utils/brazilian-utils';
+import { formatCPF } from '@brazilian-utils/brazilian-utils';
+import 'antd/dist/antd.css';
 
 export const Solicitations = () => {
-    const [finalStage, setFinalStage] = React.useState<boolean>(false);
+    const [finalStage, setFinalStage] = React.useState<boolean>(true);
     const {companyData, setCompany} = React.useContext(companyContext);
     const [selectedUsersKeys, setSelectedUsersKeys] = React.useState<string[]>([]);
     const [selectedUsers, setSelectedUsers] = React.useState<UserWithKey[]>();
@@ -61,7 +61,7 @@ export const Solicitations = () => {
             {finalStage ?
                 <FinalStage>
                     <main>
-                        <h3>{solicitationResponse} as {selectedUsers?.length || selectedUsers?.length} solicitações</h3>
+                        <h3>{solicitationResponse} as {selectedUsers?.length} solicitações</h3>
                         <p>Você tem certeza de que deseja {solicitationResponse.toLowerCase()} as seguintes solicitações?</p>
                         <ol>
                             {selectedUsers?.map(loans => (

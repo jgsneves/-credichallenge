@@ -30,12 +30,6 @@ export const colums = [
     },
 ];
 
-export const rowSelection = {
-    onChange: (selectedRowKeys: any, selectedRows: any) => {
-      console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-    }
-};
-
 export const setKeyAttribute = (arr: User[]) => {
     const parsedArray = arr.map(item => {
         const userBody = {...item, key: item.id};

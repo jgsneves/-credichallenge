@@ -56,6 +56,8 @@ export const FinalStage = styled.div`
     z-index: 10;
 
     & > main {
+        position: relative;
+        top: 25vh;
         height: 400px;
         padding: 24px;
         width: 526px;
@@ -74,6 +76,7 @@ export const FinalStage = styled.div`
 
         & > ol {
             height: 200px;
+            margin: 16px 0px;
             overflow-y: scroll;
             ::-webkit-scrollbar {
                 width: 10px;
